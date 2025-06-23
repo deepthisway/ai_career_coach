@@ -11,7 +11,7 @@ const header = () => {
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <Image src="" alt="logo" width={100} height={100} />
+          <Image src={"/logo.png"} alt="logo" width={100} height={100} />
         </Link>
         <div className="flex items-center gap-4 md:gap-6">
           <SignedIn>
@@ -63,13 +63,15 @@ const header = () => {
             <SignUpButton />
           </SignedOut>
           <SignedIn>
-            <UserButton appearance={{
-              elements:{
-                avatarBox: 'h-8 w-8',
-                userButtonAvatarBox: 'h-8 w-8',
-                userButtonAvatar: 'h-8 w-8 rounded-full',
-              }
-            }} />
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "h-8 w-8",
+                  userButtonAvatarBox: "h-8 w-8",
+                  userButtonAvatar: "h-8 w-8 rounded-full",
+                },
+              }}
+            />
           </SignedIn>
         </div>
       </nav>
