@@ -81,7 +81,7 @@ CREATE TABLE "IndustryInsights" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "User_clerkUserID_key" ON "User"("clerkUserID");
+CREATE UNIQUE INDEX "User_MentorMileID_key" ON "User"("MentorMileID");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
