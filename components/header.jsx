@@ -11,7 +11,7 @@ const header = () => {
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <Image src={"/logo.png"} alt="logo" width={100} height={100} />
+          <Image src={"/logo.png"} alt="logo" width={250} height={250} className='border-1 border-white rounded-2xl' />
         </Link>
         <div className="flex items-center gap-4 md:gap-6">
           <SignedIn>

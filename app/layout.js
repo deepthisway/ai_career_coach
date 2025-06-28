@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className}`}
         >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
           <main className="min-h-screen">{children}</main>
           <footer className="bg-muted/50 py-12">
