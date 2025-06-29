@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
           <main className="min-h-screen">{children}</main>
+          <Toaster richColors/>
           <footer className="bg-muted/50 py-12">
             <div className="text-gray-200 text-center container mx-auto">
               <p>Made by Deepanshu</p>
