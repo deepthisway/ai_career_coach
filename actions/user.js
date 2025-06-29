@@ -2,6 +2,7 @@
 
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
+import { generateAIInsights } from "./dashboard";
 
 
 export async function updateUser(data) {
@@ -21,21 +22,18 @@ export async function updateUser(data) {
           where: { industry: data.industry },
         });
 
-        if(!industryInsight)  {
+        if (!industryInsight) {
+          const insights = await generateAIInsights(data.industry);
+          if (!insights) throw new Error("Failed to generate insights");
           industryInsight = await tx.industryInsights.create({
             data: {
               industry: data.industry,
-              salaryRanges: [],
-              growthRate: 1.1,
-              demandLevel: 'High',
-              topSkills: [],
-              marketOutlook: 'Positive',
-              keyTrends: [],
-              recommendedSkills: [],
-              nextUpdate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days from now
+              ...insights,
+              nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days from now
             },
           });
         }
+
         const updatedUser = await tx.user.update({
           where: { id: user.id },
           data: {
