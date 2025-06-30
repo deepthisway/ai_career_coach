@@ -12,7 +12,7 @@ export async function generateQuiz() {
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
     select: {
       industry: true,
       skills: true,
@@ -62,7 +62,7 @@ export async function saveQuizResult(questions, answers, score) {
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
   });
 
   if (!user) throw new Error("User not found");
@@ -129,11 +129,11 @@ export async function saveQuizResult(questions, answers, score) {
 }
 
 export async function getAssessments() {
-  const { userId } = await auth();
+  const { userId } = await auth(); 
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
   });
 
   if (!user) throw new Error("User not found");
