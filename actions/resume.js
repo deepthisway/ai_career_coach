@@ -13,7 +13,7 @@ export async function saveResume(content) {
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
   });
 
   if (!user) throw new Error("User not found");
@@ -56,13 +56,12 @@ export async function getResume() {
     },
   });
 }
-
 export async function improveWithAI({ current, type }) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
     include: {
       industryInsight: true,
     },
