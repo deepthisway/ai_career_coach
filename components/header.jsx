@@ -17,11 +17,10 @@ const header = async () => {
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
           <Image
-            src={"/logo.png"}
+            src={"/mentor.png"}
             alt="logo"
             width={250}
             height={250}
-            className="border-1 border-white rounded-2xl"
           />
         </Link>
         <div className="flex items-center gap-4 md:gap-6">
