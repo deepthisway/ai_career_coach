@@ -12,7 +12,7 @@ export async function generateCoverLetter(data) {
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
   });
 
   if (!user) throw new Error("User not found");
@@ -70,7 +70,7 @@ export async function getCoverLetters() {
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
   });
 
   if (!user) throw new Error("User not found");
@@ -90,7 +90,7 @@ export async function getCoverLetter(id) {
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
   });
 
   if (!user) throw new Error("User not found");
@@ -108,7 +108,7 @@ export async function deleteCoverLetter(id) {
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
-    where: { clerkUserId: userId },
+    where: { clerkUserID: userId },
   });
 
   if (!user) throw new Error("User not found");
